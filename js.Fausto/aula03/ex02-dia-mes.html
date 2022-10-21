@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 02</title>
+    <script>
+        /*
+            Solicite ao usuario que informe o numero correspondente a um mes (1 a 12).
+            Usando a estrutura switch.case(com cases vazias, se for
+            pertinente) determine quantos dias o mês possui, conforme segue:
+            *Janeiro1, Março3, Maio5, Julho7, Agosto8, Outubro10 e Dezembro11:
+                31 dias
+            *Abril, junho, setembro e novembro: 30 dias
+            *fevereiro: 28 dias (desconsidere a existencia de anos bissextos)
+            Por fim, usando document.write(), infore ao usuario o resultado encontrado
+        */
+        //declaração de variaveis de entrada de dados
+        let mes = parseInt(prompt('Digite um um numero que corresponde um mês de 1 a 12'));
+        let resultado;
+        //array com meses
+        let meses = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho',
+                    'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'];
+        //caso mes digitado pelo usuario não seja numero realiza o bloco e mostra o erro e finaliza o programa
+        if(isNaN(mes)){
+            alert('ERRO!!! Valor digitado invalido');
+        }
+        else{ //caso contrario realiza o bloco e retorna resultado para 
+            switch(mes){
+                case 1:  //janeiro
+                case 3:  //Março
+                case 5:  //Maio
+                case 7:  //Julho
+                case 8:  //Agosto
+                case 10: //Outubro
+                case 12: //Dezembro
+                    resultado = 31;
+                    break;
+                case 4:  //Abril
+                case 6:  //junho
+                case 9:  //Setembro
+                case 11: //Novembro
+                    resultado = 30;
+                    break;
+                case 2: //Fevereiro
+                    resultado = 28;
+                    break
+                default:
+                    // caso numero nao esteja entre os meses do ano retorna um erro ao usuario
+                    alert('O numero digitado não corresponde a nenhum mês dentro do ano');         
+            }
+            if (resultado !== undefined){
+                document.write(`O mês ${meses[mes-1]} possui ${resultado} meses`);
+            }
+        }
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

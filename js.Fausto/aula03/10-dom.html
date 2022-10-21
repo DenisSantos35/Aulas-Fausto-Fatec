@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM - Document Object Model</title>
+</head>
+<body>
+    <h1>Estado da Região Sudeste</h1>
+    <!--
+        ATENÇÃO: o atributo id não pode ter valores repetidos entre os 
+        elementos de uma página
+    -->
+    <ol id='lista'>
+        <li id='sp'>São Paulo</li>
+        <li id='mg'>Minas Gerais</li>
+        <li id='rj'>Rio de Janeiro</li>
+        <li id='es'>Espirito Santo</li>
+    </ol>
+    
+    <script>
+        /*
+            Toda vez que formos utilizar JavaScript para manipular
+            os elementos HTML da pagina, a seção <script> deve ser 
+            deslocada para o final da seção <body>.
+        */
+
+        /*             
+            Para manipular um elemento HTML do JavaScript, deve - se
+            primeiro, fazer o processo de CAPTURA do elmento. Esse
+            processo consiste em localizar o elemento n o documento
+            usando métodos especificos para tal fim, os quais disponibilzam
+            o elemnto em uma variavel para o uso no JavaScript    
+
+        */
+
+        //tarefa 1: modificar o texto do elemnto h1 da pagina
+
+        //Processo de captura do hq usando o método document. querySelector()
+        //querySelector() ~> localizar o primeiro elemento de seu tipo na pagina
+        //e o armazena em uma variavel
+
+        const titulo = document.querySelector('h1');
+
+        //Modificando o texto do elemento
+        titulo.textContent = `ESTADOS DO SUDESTE DO BRASIL`;
+
+        //2)tarefa 2: mudar a cor do texto  do segundo estado listado
+        // querySelector() ~> captura TODOS os elementos do seu tipo e os
+        //armazena em um vetor
+        const estados = document.querySelectorAll('li');
+
+        //LEMBRETE: em ventores, a contagem de elementos SEMPRE começa em ZERO!
+
+        //Mudando a cor do segundo item
+        estados[1].style.color = 'blue';
+
+        //3) Tarefa 3: Colocar o texto do quarto estado em italico
+
+        //ja temos todos os itens que representam os estados na constante
+        //estados, então basta utilizá - lo novamente
+        estados[3].style.fontStyle = 'italic'
+
+        //4) tarefa 4: mudar a cor do texto do fundo e colocar testo em negrito do
+        //estado do Tio de Janeiro
+
+        //Para capturar um elemento pelo seu id, temos duas opções:
+        //1) document.getElementById('id');
+        //2) document.querySelector('#id');
+
+        //Capturando o elemento com getElementById()
+        const estadoRj = document.getElementById('rj');
+
+        estadoRj.style.backgroundColor = 'aqua';
+        estadoRj.style.fontWeight = 'bold';
+
+        //5) tarefa 5: mudar o formato da fonte estado de São Paulo e 
+        //colocar sublinhado
+
+        //capturando elemento com querySelector();
+
+        const estadoSp = document.querySelector('#sp');
+        //equivale a: const estado SP = document.getElementById('sp')
+
+        estadoSp.style.fontVariant = 'small-caps';
+        estadoSp.style.textDecoration = 'underline';
+
+        //6) tarefa 6: modificar o formato dos marcadores da lista
+        const lista = document.querySelector('#lista');
+        //equivale a: const linha = document.getElementById('lista')
+
+        lista.style.listStyle = 'lower-alpha';
+
+
+    </script>
+</body>
+</html>

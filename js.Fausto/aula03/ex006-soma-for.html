@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 06</title>
+    <script>
+        /*
+            Peça ao usuário para informar dois numeros inteiros.
+            Use o loop do..while para garantir que os numeros
+             sejam válidos e que o segundo número seja maior do que 
+             o primeiro.
+
+             Utilzando um loop for, calcule a somátória dos números
+             inteiros existentes entre os valores informados. Por
+             exemplo, se os números informados forem 20 e 25, você 
+             somará 20 + 21 + 22 + 23 + 24 + 25.
+        */
+
+        //Declaraçao de variaveis de entrada de usuário
+        let num1, num2;
+        //declaração de váriavel para somatória
+        let soma = 0;
+
+        //loop para validaçao dos dados de numeros inteiros
+        do{
+            //entrada de dados usário
+            num1 = parseInt(prompt('Digite o 1º numero inteiro.(precisa ser mmenor que o 2º numero'));
+            num2 = parseInt(prompt('Digite o 2º numero inteiro'));      
+
+        }while((isNaN(num1)) || (num1 >= num2) || isNaN(num2)) //condição de válidaçao para sair do loop
+        
+        //Loop para fazer a somátória dos numeros entre valor 1 e valor 2 inclusive.
+        for(let i = num1; i <= num2; i++){
+            soma = soma + i;
+        }
+
+        //Saida de dados para usário, informação dos valores
+        document.write(`A somatoria do numero ${num1} ate o numero ${num2} é igual á: ${soma}`)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
