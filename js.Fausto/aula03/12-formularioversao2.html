@@ -152,9 +152,13 @@
         }
         if(horario.value < 0 || horario.value >= 24 || horario.value === ''){
             alert('Digite um horario valido')
+            horario.focus();
+            return false
         }
-        
-        console.log(horario.value, typeof(horario.value));
+        if(!(exibirAlert.checked) && !(exibirDoc.checked)){
+            alert('Por favor selecione o modo de exibição')
+            return false
+        }
         return true;
     }
 
