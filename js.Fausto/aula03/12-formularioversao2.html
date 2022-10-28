@@ -144,25 +144,82 @@
             tratamento.focus();
             return false;
         }
-        if(sexo[0].checked){
-            tipoSexo = 'Masculino'         
-        }
-        if(sexo[1].checked){
-            tipoSexo = 'Feminino'
-        }
-        if(horario.value < 0 || horario.value >= 24 || horario.value === ''){
-            alert('Digite um horario valido')
-            horario.focus();
-            return false
+        
+        let horaDoDia = horario.value;
+
+        if(isNaN(horaDoDia) || horaDoDia < 0 || horaDoDia > 23 || horaDoDia === ''){
+            alert('Digite um horario valido de 0 a 23 horas.');
+            return false;
         }
         if(!(exibirAlert.checked) && !(exibirDoc.checked)){
-            alert('Por favor selecione o modo de exibição')
-            return false
+            alert('Por favor selecione o modo de exibição');
+            return false;
         }
+
         return true;
     }
 
-    enviar.addEventListener('click', validar);
+    let mensagemSaudacao = '';
+
+    function getSaudacao(){
+        if(validar()){
+            if(horario.value < 12){
+                mensagemSaudacao += 'Bom Dia, ';
+            }else if(horario.value < 18){
+                mensagemSaudacao += 'Boa Tarde, ';
+            }else{
+                mensagemSaudacao += 'Boa Noite, ';
+            }
+            
+            switch(tratamento.selectedIndex){ //selectIndex seleciona o indice, .value seleciona o valor
+                case 1:
+                    mensagemSaudacao += 'Vossa Magestade ';
+                    break;
+                case 2:
+                    if(masculino.checked){
+                        mensagemSaudacao += 'Excelentissimo '; 
+                    }else if(feminino.checked){
+                        mensagemSaudacao += 'Excelentissima ';
+                    }
+                    break;
+                case 3:
+                    if(masculino.checked){
+                        mensagemSaudacao += 'Ilustrissimo '; 
+                    }else if(feminino.checked){
+                        mensagemSaudacao += 'Ilustrissima ';
+                    }
+                    break;
+                case 4:
+                    mensagemSaudacao += 'Vossa Senhoria ';
+                    break;
+                case 5:
+                    if(masculino.checked){
+                        mensagemSaudacao += 'Senhor ';
+                    }else{
+                        mensagemSaudacao += 'Senhora '
+                    }
+                    break;
+                default:
+                if(masculino.checked){
+                        mensagemSaudacao += 'Cremosissimo ';
+                    }else{
+                        mensagemSaudacao += 'Cremosissima ';
+                    }    
+            }
+            mensagemSaudacao += `${primeiroNome.value} ${sobrenome.value}! Como posso ser util?`
+            
+            
+            if(exibirAlert.checked){
+                alert(mensagemSaudacao);
+            }
+            if(exibirDoc.checked){
+                saudacao.innerHTML = mensagemSaudacao;
+            }
+        }
+
+    }
+
+    enviar.addEventListener('click', getSaudacao);
     
 
     
