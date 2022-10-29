@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trabalho Fausto</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2? family= Barlow+Condensed:ital,wght@0,900;1,900 & family= Kaushan+Script & family= Permanent+Marker & family= Rubik+ Angustiado & display=swap');        
+        body{
+            /* 10)Coloque uma cor de fundo personalizada na página. Não usar bgcolor. */
+            background-color: rgb(129, 189, 174); 
+            /*11)Altere a fonte de todo o documento para Calibri. Não usar <font>. */
+            font-family: 'Kaushan Script', cursive;
+            padding: 35px 40px 35px 40px;
+        }
+        h1#nome{
+            /*Alinhamento do primeiro titulo no centro */
+            text-align: center;
+        }
+        .p1{
+            /*Alinhamento do primeiro paragrafo no centro */
+            text-align: center;
+        }
+        p{ 
+            /*Alinhamento da imagem ao centro */
+            margin: auto;
+            text-align: center;
+        }
+        
+        .sobreMim{
+            /*Formataçao para que o texto Sobre mim fique alinhado ao diminuir a pagina */
+            text-align: justify;
+        } 
+        h1, h2{
+            color:rgb(132, 29, 113);
+        }  
+        h2{
+            border-bottom: 1px solid black;
+        }   
+        #foto{
+            border-radius: 20px;
+            box-shadow: 5px 10px 5px black;
+        }
+        
+    </style>
+</head>
+<body>
+    <!--Título   nível   1,  centralizado   horizontalmente.  Não   usar  <center>  nemalign=”center-->
+    <h1 id="nome">Dênis Diogo dos Santos</h1> 
+    <!--2)Parágrafo com negrito semântico, centralizado horizontalmente.  Não usar<center> nem align=”center”.-->
+    <p class="p1"><strong> 31 anos, casado, natural de Franca/SP</strong></p>
+    <!--3)Um parágrafo centralizado horizontalmente, contendo uma foto de rosto sua.A foto deve ter 300 pixels de largura por 300 pixels de altura. Não usar<center> nem align=”center”.-->
+    <p>
+        <img id="foto" src="imagem/fototrabalho.png" alt="Foto Trabalho Fausto">
+    <p>
+    <!--4)Uma citação da qual você goste, dentro de um bloco de citação alinhado à direita.   Na   última   linha   (autor   da   citação),   deve   ser   aplicado   itálicosemântico. Não usar <p> nem <div>.-->
+    <blockquote id="citacao" cite="https://www.ebiografia.com/melhores_frases_de_aristoteles_comentadas/" style="text-align: right;                                          ">
+        Nós somos aquilo que<br>fazemos repetidamente<br> Excelência então não é<br> um modo de agir,<br> mas um hábito.<br><em>(Aristoteles)</em> 
+    </blockquote>
+    <!--5)Título nível 2-->
+    <h2>Sobre mim</h2>
+    <!--6)Escreva pelo menos dois parágrafos sobre você.-->
+    <p class="sobreMim">
+        Tenho 31 anos e casado, sem filhos, busco melhoria proficional através de meus estudos, tenho algumas formaçoes em logistica, quimica e eletronica e através da eletrônica me apaixonei por este mundo da tecnologia.
+    </p>
+    <p class="sobreMim">
+        Sou amante de uma boa musica, e gosto de conhecer lugares diferentes, nos tempos vagos estamos sempre a pegar estradas e conhecer as riquezas da natureza.
+    </p>
+    <!--5)Título nível 2.-->
+    <h2>Escolaridade</h2>
+    <!--7)Utilize uma lista não ordenada, utilizando círculos vazados como marcadores,para relacionar a(s) escola(s) onde estudou.-->
+    <ul type="circle">
+        <li>Ensino Técnico em eletronica: <a href="https://www.facebook.com/escolaindustrialdefranca/" target="_blank">ETEC Dr. Júlio Cardoso, Franca/SP</a> </li>
+        <li>Ensino Superior em logistica:<a href="https://www.facebook.com/polounisa.araxa/" target="_blank">UNISA - Universidade de Santo Amaro, Araxá/MG</a> </li>
+        <li>Ensino Técnico em curtimento: <a href="https://www.facebook.com/escolaagricolafranca/" target="_blank">ETEC Prof. Carmelino Corrêa Junior, Franca/SP</a> </li>
+        <li>Ensio Médio: <a href="https://www.facebook.com/profadonabranca/" target="_blank
+            ">E. E. Prof. Maria Cintra Nunes Rocha, Prof. Dona Branca, Franca/SP</a> </li>
+        <li>Ensino Fundamental: <a href="https://www.facebook.com/escolasuzanaribeirosandoval/" target="_blank">E. E. Suzana Ribeiro Sandoval, Franca/SP</a> </li>
+    </ul>
+    <!--8)Título nível 2, com itálico semântico.-->
+    <h2><em>Hobies</em></h2>
+    <!--9)Utilize uma lista ordenada para relacionar seus hobbies. Os tópicos devemser ordenados em letras minúsculas (a., b., c., etc.)-->
+    <ol type="a">
+        <li>Passear nas estradas municipais conhecendo roças e riachos.</li>
+        <li>Projetinhos eletronicos com Pic e arduino.</li>
+        <li>Cuidar do Pomar.</li>
+    </ol>
+
+    
+</body>
+</html>
