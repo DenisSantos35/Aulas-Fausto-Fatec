@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,900;1,900&family=Oswald:wght@200;300;400;500;600;700&family=Permanent+Marker&family=Rubik+Distressed&display=swap');      
+body{
+    /* 10)Coloque uma cor de fundo personalizada na página. Não usar bgcolor. */
+    background-color: rgb(129, 189, 174); 
+    /*11)Altere a fonte de todo o documento para Calibri. Não usar <font>. */
+        font-family: Rubik Distressed;
+    padding: 35px 40px 35px 40px;
+}
+h1#nome{
+    /*Alinhamento do primeiro titulo no centro */
+    text-align: center;
+}
+.p1{
+    /*Alinhamento do primeiro paragrafo no centro */
+    text-align: center;
+}
+p{ 
+    /*Alinhamento da imagem ao centro */
+    margin: auto;
+    text-align: center;
+}
+
+.sobreMim{
+    /*Formataçao para que o texto Sobre mim fique alinhado ao diminuir a pagina */
+    text-align: justify;
+} 
+h1, h2{
+    /*cor nas letras escritas dentro das tags h1 e h2 */
+    color:rgb(132, 29, 113);
+}  
+h2{
+    /*borda na parte inferior das tags h2 */
+    border-bottom: 1px solid black;
+}   
+#foto{
+    /*bordas arredondadas e sombreamento na imagem */
+    border-radius: 20px;
+    box-shadow: 5px 10px 5px black;
+}
+footer{
+    color: white;
+    text-align: center;
+}
