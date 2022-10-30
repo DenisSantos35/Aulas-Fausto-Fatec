@@ -1,2 +1,2 @@
-# Aulas-Fausto-Fatec
+# AulasFausto
  Aulas ministradas por fausto na Fatec - Franca - SP - JavaScript
