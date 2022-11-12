@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vetores</title>
+</head>
+<body>
+    
+    <script>
+        /* ******************************************************************
+         * vetores
+         * 
+         * ~> vetores permitem que multiplos valores sejam armazenados em uma unica variavel
+         * ~> Os valores são armazenados dentro do vetor em 
+         * posições NUMERADAS, sendo que a primeira delas
+         * recebe o numero ZERO(0).
+         * ***************************************************************** */
+         //1) Declarando um vetor vazio. Note que o tamanho 
+         // maximo do vetor não é especificicado.
+         let vetorVazio = [];   //Forma moderna
+         let vetorVazio2 = Array(); //forma tradicional
+
+         //2) Um vetor também pode ser declarado já com valores
+         let numeros1 = [10, 20, 30, 40, 50];
+         let numeros2 = Array(10, 20, 30, 40, 50);
+
+         //Em ambos os casos, o valor 10 esta no indice 0;
+         //o valor 20 esta no indice 1 e assim por diante
+
+         //3) Vetores podem armazenar qualquer tipo de dados
+         // inclusive misturando - os em um mesmo vetor
+
+         let mix = ['Fulano de tal', 23, 1.73, 67, false];
+
+         //Vetor de strings
+         let frutas = ['Banana', 'Maçã', 'Pera', 'uva', 'Mamão', 'pêssego'];
+
+         //4) Acessando elementos de um vetor: usa-se a respectiva posição,
+         //lembrando-se de que a contagem inicia-se em zero
+
+         document.write(`Primeira fruta: ${frutas[0]} <br>`);
+         document.write(`Quarta fruta: ${frutas[3]} <br>`);
+         document.write(`Terceira fruta: ${frutas[2]} <br>`);
+
+         //5) Para descobrir a quantidade de elementos de um vetor,
+         //usa-se length
+         document.write(`Quantidade de frutas no vetor ${frutas.length}<br>`);
+
+         //6) Acessando a última fruta 
+
+         //forma tradicional 
+         document.write(`ultima fruta ${frutas[frutas.length - 1]}<br>`);
+         
+         //Forma moderna
+         document.write(`ultima fruta ${frutas.at(-1)}`);
+
+         
+
+
+    </script>
+    
+</body>
+</html>

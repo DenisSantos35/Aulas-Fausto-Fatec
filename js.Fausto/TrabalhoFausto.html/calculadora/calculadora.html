@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <style>
+        * {
+            font-family: Cambria, 'Times New Roman', serif;
+        }
+        label {
+            display: block;
+        }
+        div, fieldset {
+            margin-bottom: 20px;
+        }
+        fieldset {
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Calculadora DOM simples</h1>
+    <div>
+        <label for="num1">Primeiro número</label>
+        <input id="num1" type="number">
+    </div>
+    <div>
+        <label for="oper">Operação</label>
+        <select id="oper">
+            <option>(Selecione)</option>
+            <option>Somar</option>
+            <option>Subtrair</option>
+            <option>Multiplicar</option>
+            <option>Dividir</option>
+        </select>
+    </div>
+    <div>
+        <label for="num2">Segundo número</label>
+        <input id="num2" type="number">
+    </div>
+    <fieldset>
+        <legend>Resultado</legend>
+        <p id="resultado"></p>
+    </fieldset>
+    <div>
+        <button id="calcular">Calcular</button>
+    </div>
+    <script>
+        /*
+            Usando o exemplo do gerador de saudação, implementar o funcionamento
+            da calculadora, seguindo os passos:
+            1) Capturar todos os elementos com id
+            2) Função de validação do formulário
+            3) Função de cálculo, que chama a função de validação
+            4) Associar a função de cálculo ao clique do botão Calcular
+            Entregar no Teams até o início da aula do dia 10/11 (quinta-feira).
+            Esta atividade será considerada para a nota de participação.
+        */
+       /* Capturar todos os elementos com id*/
+
+        let n1 = document.getElementById('num1')
+        let n2 = document.getElementById('num2')   
+       
+        const operacao = document.getElementById('oper')
+        const exibirResp = document.getElementById('resultado')
+        const calcular = document.getElementById('calcular')  
+        
+        /* Função de validação do formulário*/
+
+        function validar() {
+
+            if (n1.value === '') {
+                alert('O primeiro número deve ser preenchido.')
+                n1.focus()
+                return false
+            }
+
+            if (n2.value === '') {
+                alert('O segundo número deve ser preenchido.')
+                n2.focus()
+                return false
+            }
+
+            if (operacao.selectedIndex <= 0) {
+                alert('Selecione uma operação.')
+                operacao.focus()
+                return false
+            }           
+
+            return true
+        }
+
+        /* Função de cálculo, que chama a função de validação*/
+
+        function calculo() {            
+            
+            if (validar()) {
+                n1 = Number(n1.value);
+                n2 = Number(n2.value);
+                let res;
+               
+                switch(operacao.selectedIndex) {
+                    case 1:
+                        res = n1 + n2;                                             
+                        break
+                    case 2:
+                        if (n1 > n2) {
+                            res = n1 - n2;
+                        }
+                        else if (n2 > n1) {                        
+                            res = n2 - n1;
+                        }
+                        else {
+                            res = n1 - n2;
+                        }
+                        break
+                    case 3:
+                        res = n1 * n2;
+                        break
+                    default:
+                        if(n2 !== 0){
+                            if (n1>n2) {
+                                res = n1 / n2;
+                            }
+                            else{
+                                res = n2 / n1;
+                            } 
+                                                            
+                        }                        
+                } 
+                exibirResp.textContent = `${res}`
+                console.log(exibirResp)
+            }          
+        }
+        /* Associar a função de cálculo ao clique do botão Calcular*/      
+
+        calcular.addEventListener('click', calculo)
+
+    </script>
+    
+    
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>switch/case</title>
+    <script>
+        /*
+            CALCULADORA SIMPLES
+            Este programa solicit que o usuario informe
+            dois numeros e um operador matemático, efetua
+            a operação correspondente e exibe o resultado.
+            Operadores aceitos:
+            + para adição
+            -para subtração
+            *, X ou x para multiplicação
+            / ou : para divisão       
+        */
+
+        //primeiro numero
+        let num1 = Number(prompt('Informe o primeiro numero:'));
+
+        //segundo numero
+        let num2 = Number(prompt('Informe o segundo numero'));
+
+        //recebe um resultado
+        let resultado;
+
+        //operador
+        let oper = prompt('Operdaor(+, -, *, X, x, / ou :): ')
+        //Validação de dados
+        if(isNaN(num1)){
+            alert('ERRO: Primeiro numero inválido ou não informado.')
+        }
+        else if(isNaN(num2)){
+            alert('ERRO: segundo número invalido ou não informado')
+        }
+        //Daqui em diante os números são válidos e possamos a verificar
+        //Qual foi o operador escolhido
+
+        switch(oper){
+            case '+':
+                resultado = num1 + num2
+                break
+            case '-':
+                resultado = num1 - num2
+                break
+            case '*':
+            case 'x':
+            case 'X':
+                resultado = num1 * num2
+                break
+            case ('/'):
+            case (':'):
+                resultado = num1 / num2
+                break
+            default:
+                alert('ERRO: operador desconhecido.')
+        }   
+        if(resultado !== undefined){
+            document.write(`O resultado do calculo é ${resultado}`)
+        }
+    
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
