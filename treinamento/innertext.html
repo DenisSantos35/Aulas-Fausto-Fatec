@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>formulario</title>
+    <style>
+
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Treino formulario</h1>
+        <fieldset>
+            <legend><h2>Nome</h2></legend>
+            <label for="nome">Digite seu nome:</label>
+            <input type="text" name="nome" id="nome">
+        </fieldset>
+        <fieldset>
+            <legend><h2>Idade</h2></legend>
+            <label for="idade">Digite sua idade: </label>
+            <input type="text" name="idade" id="idade">
+        </fieldset>
+        <fieldset>
+            <legend><h2>Peso</h2></legend>
+            <label for="peso">Digite seu peso: </label>
+            <input type="text" name="peso" id="peso">
+        </fieldset>
+        <fieldset>
+            <legend><h2>Altura</h2></legend>
+            <label for="altura">Altura: </label>
+            <input type="text" name="altura" id="altura">
+        </fieldset>
+    </div>
+    <div id="button">
+        <input type="button" value="Calcular" id="calcular">
+    </div>
+    <div>
+        <fieldset>
+            <legend><h1>Resposta IMC</h1></legend>
+            <div id="resposta">Aguarde...</div>
+        </fieldset>
+    </div>
+
+    <script>
+        const nome = document.querySelector('#nome');
+        const idade = document.querySelector('#idade');
+        const peso = document.querySelector('#peso');
+        const altura = document.querySelector('#altura');
+        const botao = document.querySelector('#calcular');
+        const resposta = document.querySelector('#resposta')
+        function erro(valor){
+            alert('ERRO!!! Digite um valor valido')
+            return valor = '';
+            
+        }        
+
+        function verificarString(){
+            if(!(isNaN(nome.value)) || (nome.value === "")){
+                nome.value = erro(nome.value);
+                nome.focus();
+                return false;
+            }
+            if(isNaN(idade.value) || (idade.value === "")){
+                idade.value = erro(idade.value);
+                idade.focus();
+                return false;
+            }
+            if(isNaN(peso.value) || peso.value === "" || peso.value < 3){
+                peso.value  = erro();
+                peso.focus();
+                return false;
+            }
+            if(isNaN(altura.value) || altura.value === ""){
+                altura.value = erro();
+                altura.focus();
+                return false
+            }
+            let indice = imc();  
+            mensagem(nome.value, idade.value, indice );          
+        }
+        function imc(){        
+            const alt = Number(altura.value);
+            const pes = Number(peso.value);
+            const indice = pes / (alt ** 2); 
+            return indice.toFixed(2) ;          
+                                  
+        }
+
+        function mensagem(nome, idade, valor){            
+                return resposta.innerHTML =  `Nome: ${nome}; idade: ${idade}; imc: ${imc()}`            
+        }
+
+        botao.addEventListener('click', () => {
+            verificarString();           
+        });
+
+    </script>
+
+    
+</body>
+</html>
